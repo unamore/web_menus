@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id          :integer          not null, primary key
+#  coderest    :integer
+#  namerest    :string(255)
+#  adressrest  :string(255)
+#  contactrest :string(255)
+#  emailrest   :string(255)
+#  cities_id   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coderest: 1
+  namerest: MyString
+  adressrest: MyString
+  contactrest: MyString
+  emailrest: MyString
+  cities_id: 
+
+two:
+  coderest: 1
+  namerest: MyString
+  adressrest: MyString
+  contactrest: MyString
+  emailrest: MyString
+  cities_id: 

@@ -1,0 +1,16 @@
+<h1>Home</h1>
+<p>Welcome to the Blogs Application</p>
+
+<% if user_signed_in? %>
+    <p>Sesion Iniciada</p>
+    <%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete %>
+<%else %>
+    <%= link_to 'Iniciar Sesion', new_user_session_path %>
+<% end %>
+
+
+<% if current_user %>
+<p> <%= current_user.email %> </p>
+<% end %>
+
+

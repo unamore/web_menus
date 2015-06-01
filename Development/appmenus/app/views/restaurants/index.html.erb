@@ -1,0 +1,35 @@
+<h1>Listing restaurants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Coderest</th>
+      <th>Namerest</th>
+      <th>Adressrest</th>
+      <th>Contactrest</th>
+      <th>Emailrest</th>
+      <th>Cities</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.coderest %></td>
+        <td><%= restaurant.namerest %></td>
+        <td><%= restaurant.adressrest %></td>
+        <td><%= restaurant.contactrest %></td>
+        <td><%= restaurant.emailrest %></td>
+        <td><%= restaurant.cities %></td>
+        <td><%= link_to 'Show', city_restaurant_path(@city,restaurant) %></td>
+        <td><%= link_to 'Edit', edit_city_restaurant_path(@city,restaurant) %></td>
+        <td><%= link_to 'Destroy', city_restaurant_path(@city, restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restaurant', new_city_restaurant_path(@city) %>

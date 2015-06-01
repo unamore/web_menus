@@ -1,0 +1,41 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :coderest %><br>
+    <%= f.number_field :coderest %>
+  </div>
+  <div class="field">
+    <%= f.label :namerest %><br>
+    <%= f.text_field :namerest %>
+  </div>
+  <div class="field">
+    <%= f.label :adressrest %><br>
+    <%= f.text_field :adressrest %>
+  </div>
+  <div class="field">
+    <%= f.label :contactrest %><br>
+    <%= f.text_field :contactrest %>
+  </div>
+  <div class="field">
+    <%= f.label :emailrest %><br>
+    <%= f.text_field :emailrest %>
+  </div>
+  <div class="field">
+    <%= f.label :cities_id %><br>
+    <%= f.text_field :cities_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
