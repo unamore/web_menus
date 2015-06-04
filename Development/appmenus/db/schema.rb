@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601050843) do
+ActiveRecord::Schema.define(version: 20150604014203) do
 
   create_table "cities", force: true do |t|
     t.integer  "codename"
@@ -26,12 +26,10 @@ ActiveRecord::Schema.define(version: 20150601050843) do
     t.string   "adressrest"
     t.string   "contactrest"
     t.string   "emailrest"
-    t.integer  "cities_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "city_id"
   end
-
-  add_index "restaurants", ["cities_id"], name: "index_restaurants_on_cities_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -8,9 +8,9 @@
 #  adressrest  :string(255)
 #  contactrest :string(255)
 #  emailrest   :string(255)
-#  cities_id   :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  city_id     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

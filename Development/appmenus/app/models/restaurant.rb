@@ -8,13 +8,13 @@
 #  adressrest  :string(255)
 #  contactrest :string(255)
 #  emailrest   :string(255)
-#  cities_id   :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  city_id     :integer
 #
 
 class Restaurant < ActiveRecord::Base
-  belongs_to :cities
+  belongs_to :city
   validates :namerest, presence: true
   validates :adressrest, presence: true
   validates :contactrest, presence: true
