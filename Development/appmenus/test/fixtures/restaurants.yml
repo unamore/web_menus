@@ -8,7 +8,7 @@
 #  adressrest  :string(255)
 #  contactrest :string(255)
 #  emailrest   :string(255)
-#  cities_id   :integer
+#  city_id     :integer
 #  created_at  :datetime
 #  updated_at  :datetime
 #
@@ -21,7 +21,7 @@ one:
   adressrest: MyString
   contactrest: MyString
   emailrest: MyString
-  cities_id: 
+  city_id: 
 
 two:
   coderest: 1
@@ -29,4 +29,4 @@ two:
   adressrest: MyString
   contactrest: MyString
   emailrest: MyString
-  cities_id: 
+  city_id: 

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   
 
+  
+
+  resources :typeplates do
+  resources :plates
+end
+
+  #resources :restaurants
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
   resources :cities do

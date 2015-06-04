@@ -1,0 +1,27 @@
+<h1>Listing typeplates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codetype</th>
+      <th>Nametype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @typeplates.each do |typeplate| %>
+      <tr>
+        <td><%= typeplate.codetype %></td>
+        <td><%= typeplate.nametype %></td>
+        <td><%= link_to 'Show', typeplate %></td>
+        <td><%= link_to 'Edit', edit_typeplate_path(typeplate) %></td>
+        <td><%= link_to 'Destroy', typeplate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Typeplate', new_typeplate_path %>

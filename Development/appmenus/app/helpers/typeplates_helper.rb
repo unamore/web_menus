@@ -1,0 +1,2 @@
+module TypeplatesHelper
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codeplate:</strong>
+  <%= @plate.codeplate %>
+</p>
+
+<p>
+  <strong>Nameplate:</strong>
+  <%= @plate.nameplate %>
+</p>
+
+<p>
+  <strong>Typeplate:</strong>
+  <%= @plate.typeplate %>
+</p>
+
+<%= link_to 'Edit', edit_plate_path(@plate) %> |
+<%= link_to 'Back', plates_path %>

@@ -8,7 +8,7 @@
 #  adressrest  :string(255)
 #  contactrest :string(255)
 #  emailrest   :string(255)
-#  cities_id   :integer
+#  city_id     :integer
 #  created_at  :datetime
 #  updated_at  :datetime
 #

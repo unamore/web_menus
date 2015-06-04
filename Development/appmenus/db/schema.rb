@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601050843) do
+ActiveRecord::Schema.define(version: 20150603034304) do
 
   create_table "cities", force: true do |t|
     t.integer  "codename"
@@ -20,18 +20,35 @@ ActiveRecord::Schema.define(version: 20150601050843) do
     t.datetime "updated_at"
   end
 
+  create_table "plates", force: true do |t|
+    t.integer  "codeplate"
+    t.string   "nameplate"
+    t.integer  "typeplate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "plates", ["typeplate_id"], name: "index_plates_on_typeplate_id", using: :btree
+
   create_table "restaurants", force: true do |t|
     t.integer  "coderest"
     t.string   "namerest"
     t.string   "adressrest"
     t.string   "contactrest"
     t.string   "emailrest"
-    t.integer  "cities_id"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "restaurants", ["cities_id"], name: "index_restaurants_on_cities_id", using: :btree
+  add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id", using: :btree
+
+  create_table "typeplates", force: true do |t|
+    t.integer  "codetype"
+    t.string   "nametype"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

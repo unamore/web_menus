@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: plates
+#
+#  id           :integer          not null, primary key
+#  codeplate    :integer
+#  nameplate    :string(255)
+#  typeplate_id :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codeplate: 1
+  nameplate: MyString
+  typeplate_id: 
+
+two:
+  codeplate: 1
+  nameplate: MyString
+  typeplate_id: 
