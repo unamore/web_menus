@@ -11,6 +11,7 @@
 #  city_id     :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  city_id     :integer
 #
 
 class Restaurant < ActiveRecord::Base

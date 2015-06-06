@@ -1,4 +1,4 @@
-<%= form_for(@plate) do |f| %>
+<%= form_for([@typeplate, @plate]) do |f| %>
   <% if @plate.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@plate.errors.count, "error") %> prohibited this plate from being saved:</h2>
@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= @typeplate.codetype %><br>
+  </div>
+  
   <div class="field">
     <%= f.label :codeplate %><br>
     <%= f.number_field :codeplate %>

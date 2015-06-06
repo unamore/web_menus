@@ -15,7 +15,7 @@ class PlatesController < ApplicationController
   end
 
   def new
-    @plate = @typeplate.Plates.new
+    @plate = @typeplate.plates.new
     respond_with(@typeplate, @plate)
   end
 
@@ -23,7 +23,7 @@ class PlatesController < ApplicationController
   end
 
   def create
-    @plate = @typeplate.Plates.new(plate_params)
+    @plate = @typeplate.plates.new(plate_params)
     @plate.save
     respond_with(@typeplate)
   end
