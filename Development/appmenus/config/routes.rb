@@ -3,9 +3,7 @@ Rails.application.routes.draw do
 
   
 
-  resources :typeplates do
-  resources :plates
-end
+ 
 
   #resources :restaurants
 
@@ -14,6 +12,11 @@ end
   resources :cities do
       resources :restaurants
   end
+
+ resources :typeplates do
+  resources :plates
+end
+
 
   get 'home/index'
 

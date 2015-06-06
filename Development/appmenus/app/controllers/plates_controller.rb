@@ -11,38 +11,41 @@ class PlatesController < ApplicationController
   end
 
   def show
-    respond_with(@plate)
+    respond_with(@typeplate, @plate)
   end
 
   def new
-    @plate = Plate.new
-    respond_with(@plate)
+    @plate = @typeplate.Plates.new
+    respond_with(@typeplate, @plate)
   end
 
   def edit
   end
 
   def create
-    @plate = Plate.new(plate_params)
+    @plate = @typeplate.Plates.new(plate_params)
     @plate.save
-    respond_with(@plate)
+    respond_with(@typeplate)
   end
 
   def update
     @plate.update(plate_params)
-    respond_with(@plate)
+    respond_with(@typeplate)
   end
 
   def destroy
     @plate.destroy
-    respond_with(@plate)
+    respond_with(@typeplate)
   end
 
   private
     def set_plate
       @plate = Plate.find(params[:id])
     end
-
+    def set_typeplate
+      @typeplate = Typeplate.find(params[:typeplate_id])
+    end
+    
     def plate_params
       params.require(:plate).permit(:codeplate, :nameplate, :typeplate_id)
     end

@@ -16,9 +16,9 @@
         <td><%= plate.codeplate %></td>
         <td><%= plate.nameplate %></td>
         <td><%= plate.typeplate %></td>
-        <td><%= link_to 'Show', plate %></td>
-        <td><%= link_to 'Edit', edit_plate_path(plate) %></td>
-        <td><%= link_to 'Destroy', plate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', typeplate_plate_path(@typeplate,plate) %></td>
+        <td><%= link_to 'Edit', edit_typeplate_plate_path(@typeplate,plate) %></td>
+        <td><%= link_to 'Destroy', typeplate_plate_path(@typeplate,plate), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Plate', new_plate_path %>
+<%= link_to 'New Plate', new_typeplate_plate_path(@typeplate) %>

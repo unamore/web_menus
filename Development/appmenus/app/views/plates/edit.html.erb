@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @plate %> |
-<%= link_to 'Back', plates_path %>
+<%= link_to 'Show', typeplate_plate_path (@typeplate @plate) %> |
+<%= link_to 'Back', typeplate_plates_path (@typeplate) %>
