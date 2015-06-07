@@ -1,0 +1,33 @@
+<%= form_for(@type_user) do |f| %>
+  <% if @type_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@type_user.errors.count, "error") %> prohibited this type_user from being saved:</h2>
+
+      <ul>
+      <% @type_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :codetype %><br>
+    <%= f.number_field :codetype %>
+  </div>
+  <div class="field">
+    <%= f.label :nametype %><br>
+    <%= f.text_field :nametype %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br>
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :update_at %><br>
+    <%= f.datetime_select :update_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

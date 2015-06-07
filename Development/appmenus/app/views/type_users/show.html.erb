@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codetype:</strong>
+  <%= @type_user.codetype %>
+</p>
+
+<p>
+  <strong>Nametype:</strong>
+  <%= @type_user.nametype %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @type_user.created_at %>
+</p>
+
+<p>
+  <strong>Update at:</strong>
+  <%= @type_user.update_at %>
+</p>
+
+<%= link_to 'Edit', edit_type_user_path(@type_user) %> |
+<%= link_to 'Back', type_users_path %>
