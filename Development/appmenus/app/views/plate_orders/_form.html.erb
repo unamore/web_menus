@@ -1,0 +1,25 @@
+<%= form_for(@plate_order) do |f| %>
+  <% if @plate_order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plate_order.errors.count, "error") %> prohibited this plate_order from being saved:</h2>
+
+      <ul>
+      <% @plate_order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :plate_id %><br>
+    <%= f.number_field :plate_id %>
+  </div>
+  <div class="field">
+    <%= f.label :order_id %><br>
+    <%= f.number_field :order_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

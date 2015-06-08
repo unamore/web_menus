@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date menu:</strong>
+  <%= @menu.date_menu %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @menu.price %>
+</p>
+
+<p>
+  <strong>Date end:</strong>
+  <%= @menu.date_end %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @menu.restaurant_id %>
+</p>
+
+<p>
+  <strong>Plate:</strong>
+  <%= @menu.plate_id %>
+</p>
+
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

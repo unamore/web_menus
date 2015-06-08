@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created_at: 2015-06-08 04:01:50
+  update_at: 2015-06-08 04:01:50
+  address: MyString
+  phone: MyString
+  restaurant_id: 1
+
+two:
+  created_at: 2015-06-08 04:01:50
+  update_at: 2015-06-08 04:01:50
+  address: MyString
+  phone: MyString
+  restaurant_id: 1

@@ -1,0 +1,27 @@
+<h1>Listing plate_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plate</th>
+      <th>Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plate_orders.each do |plate_order| %>
+      <tr>
+        <td><%= plate_order.plate_id %></td>
+        <td><%= plate_order.order_id %></td>
+        <td><%= link_to 'Show', plate_order %></td>
+        <td><%= link_to 'Edit', edit_plate_order_path(plate_order) %></td>
+        <td><%= link_to 'Destroy', plate_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plate order', new_plate_order_path %>

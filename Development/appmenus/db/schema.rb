@@ -11,11 +11,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607091711) do
+ActiveRecord::Schema.define(version: 20150608050950) do
 
   create_table "cities", force: true do |t|
     t.integer  "codename"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menu_orders", force: true do |t|
+    t.integer  "menu_id"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menus", force: true do |t|
+    t.datetime "date_menu"
+    t.decimal  "price",         precision: 10, scale: 0
+    t.datetime "date_end"
+    t.integer  "restaurant_id"
+    t.integer  "plate_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "update_at"
+    t.string   "address"
+    t.string   "phone"
+    t.integer  "restaurant_id"
+    t.datetime "updated_at"
+  end
+
+  create_table "plate_orders", force: true do |t|
+    t.integer  "plate_id"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -52,6 +85,13 @@ ActiveRecord::Schema.define(version: 20150607091711) do
   create_table "typeplates", force: true do |t|
     t.integer  "codetype"
     t.string   "nametype"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

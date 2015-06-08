@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
   
 
+  resources :menu_orders
+
+  resources :menus
+
+  resources :plate_orders
+
+  resources :user_orders
+
+  resources :orders
+
   resources :type_users
 
-  get 'home/index'
-  root 'home#index'  
+#  get 'home/index'
+#  root 'home#index'  
 
  
 
