@@ -1,6 +1,19 @@
 Rails.application.routes.draw do
   
 
+  get 'home/index'
+  root 'home#index'  
+  
+  get 'home/cabecera'
+  get 'home/listado'
+  get 'home/about'
+  get 'home/pedido'
+  get 'home/vision'
+  get 'home/mision'
+  get 'home/locales'
+  get 'home/mapa'
+  
+  
   resources :menu_orders
 
   resources :menus
@@ -13,8 +26,6 @@ Rails.application.routes.draw do
 
   resources :type_users
 
-#  get 'home/index'
-#  root 'home#index'  
 
  
 
@@ -22,6 +33,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+  
   resources :cities do
       resources :restaurants
   end
