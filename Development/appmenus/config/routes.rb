@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'home/cabecera'
   get 'home/listado'
   get 'home/about'
-  get 'home/pedido'
+  get 'orders/new'
   get 'home/vision'
   get 'home/mision'
   get 'home/locales'
