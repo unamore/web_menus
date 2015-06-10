@@ -8,6 +8,11 @@
 #  adressrest  :string(255)
 #  contactrest :string(255)
 #  emailrest   :string(255)
+#  city_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 <<<<<<< HEAD
 #  city_id     :integer
 =======
