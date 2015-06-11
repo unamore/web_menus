@@ -14,4 +14,49 @@
     <%= f.grouped_collection_select :restaurant_id, City.order(:name), :restaurants, :name, :id, :namerest,
     include_blank: true %>
 </div>    
+   <%= f.label :menu %><br/>
+   <% contador = 1;
+      limite = 2;
+    %>
+    <button type="button"  onclick=""> Grabar</button>
+   <h1>Listing menus</h1>
+ 
+<table border=1 >
+  <tr>
+    <th>Id</th>
+    <th>Plate</th>
+    <th>Plate Name</th>
+    <th>Price</th>
+    <th>Restaurant</th>
+    <th>Restaurant Name</th>
+    <th>Seleccionar</th>
+  </tr>
+  
+  <% while contador <= limite %>
+   <%  @Menu = Menu.find(contador)    %>
+
+    <tr>
+      <td><%= @Menu.id %></td>
+      <td><%= @Menu.plate_id %></td>
+      
+    <%  @Plate = Plate.find(@Menu.plate_id) %>
+      <td><%= @Plate.nameplate    %></td>
+      <td><%= @Menu.price         %></td>
+      <td><%= @Menu.restaurant_id %></td>
+    <% @Restaurant =Restaurant.find(@Menu.restaurant_id) %>    
+      <td><%= @Restaurant.namerest      %></td>
+      <td><input type="checkbox" name="menucheck"></td>
+    </tr>
+   <% contador += 1; %>
+<% end %>
+  
+
+  
+ 
+</table>
+   
+   
+<div class="field">
+    
+</div>    
 <% end %>

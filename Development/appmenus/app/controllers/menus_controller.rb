@@ -16,6 +16,10 @@ class MenusController < ApplicationController
     @menu = Menu.new
     respond_with(@menu)
   end
+  
+  def find
+    @menus = Menu.find(params[:id])
+  end
 
   def edit
   end

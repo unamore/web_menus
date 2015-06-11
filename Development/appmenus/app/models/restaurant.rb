@@ -16,8 +16,15 @@
 
 class Restaurant < ActiveRecord::Base
   belongs_to :city
+  has_many   :menus
   validates :namerest, presence: true
   validates :adressrest, presence: true
   validates :contactrest, presence: true
   validates :emailrest, presence: true
+  
+  def display_menus()
+    
+    return @Menu.all
+  
+  end
 end
