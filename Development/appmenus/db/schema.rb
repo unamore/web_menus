@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608050950) do
+ActiveRecord::Schema.define(version: 20150610021612) do
 
   create_table "cities", force: true do |t|
     t.integer  "codename"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 20150608050950) do
 
   create_table "menus", force: true do |t|
     t.datetime "date_menu"
-    t.decimal  "price",         precision: 10, scale: 0
     t.datetime "date_end"
     t.integer  "restaurant_id"
     t.integer  "plate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "price"
   end
 
   create_table "orders", force: true do |t|
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20150608050950) do
     t.integer  "typeplate_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "price"
   end
 
   add_index "plates", ["typeplate_id"], name: "index_plates_on_typeplate_id", using: :btree
@@ -69,10 +70,12 @@ ActiveRecord::Schema.define(version: 20150608050950) do
     t.string   "adressrest"
     t.string   "contactrest"
     t.string   "emailrest"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "city_id"
   end
+
+  add_index "restaurants", ["city_id"], name: "index_restaurants_on_city_id", using: :btree
 
   create_table "type_users", force: true do |t|
     t.integer  "codetype"
