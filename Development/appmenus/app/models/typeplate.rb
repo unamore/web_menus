@@ -11,5 +11,6 @@
 
 class Typeplate < ActiveRecord::Base
     has_many :plates, dependent: :destroy
-    
+  validates :nametype, presence: true
+  
 end

@@ -13,4 +13,6 @@
 
 class Plate < ActiveRecord::Base
   belongs_to :typeplate
+  validates :nameplate, presence: true
+  
 end
