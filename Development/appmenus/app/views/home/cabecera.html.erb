@@ -1,24 +1,69 @@
-<table border=1 >
-<tr>
-<td>    
-    
-<table border=1 >
-<tr> 
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td> 
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  
-  <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
- <td><h2><b>Bienvenido a la pagina de Pedidos de Menus</b></h2></td> 
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  
- <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
- <td><b>Sig in</b></td></tr>
- </td></tr>
- </table>
 
-</tr>
-</td>
+
+<%= yield %>
+
+</html>
+
+<html>
+<head>
+  <title>Appmenus</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!--
+  <% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+-->  <header>
+      <nav class="be-red white largo-padding">
+        
+          <ul class="no-list row center-xs middle-xs">
+            
+            <li class="col-md"> <h1 class="no-margin" id="Logo" > MENUS IN HOUSE Bienvenido<></h1> </li>
+            <li class="col-md"> 
+            <%= link_to "INICIO", root_url  %> </li>
+            <li class="col-md"> DISEÑO</li>
+            <li class="col-md"> PROGRAMACION</li>
+              <li class="col-md">          <% if user_signed_in? %>
+
+ bienvenido <%= current_user.email %>
+
+ <%=link_to "Cerrar  sesion ", destroy_user_session_path,method: :delete  %>
+<!--<meta HTTP-EQUIV="REFRESH" content="0; url=https://web-menus-unamore.c9.io/"> -->
+
+
+ <%else%>
+     Inicia Sesion
+   <% def old_action
+headers["Status"] = "301 Moved Permanently"
+redirect_to "https://web-menus-unamore.c9.io/"
+end
+    %>
+<%#"https://web-menus-unamore.c9.io/" %>    
+    <%# =link_to "Inicia Sesion", new_user_session_path %>
+    
+ 
+     <%end%>
+ </li>
+ 
+            
+          </ul>
+      </nav>
+</header>      
+<%= yield %>
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+</body>
+</html>
+
+
+
 </table>    
     

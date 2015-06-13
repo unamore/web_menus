@@ -1,8 +1,9 @@
-<h1>Listing orders</h1>
+<h1>Historico de Pedidos</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Numero de Pedido</th>
       <th>Created at</th>
       <th>Update at</th>
       <th>Address</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
+        <td><%= order.id %></td>
         <td><%= order.created_at %></td>
         <td><%= order.update_at %></td>
         <td><%= order.address %></td>
@@ -24,7 +26,13 @@
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+      <% end %>
+      
+      <% ##@plate_orders.each do |l| %>
+      <%#= l.plate_id      %>
+      
+    <% #end %>  
+    
   </tbody>
 </table>
 

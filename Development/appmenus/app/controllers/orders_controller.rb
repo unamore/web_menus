@@ -7,9 +7,17 @@ class OrdersController < ApplicationController
     @orders = Order.all
     respond_with(@orders)
   end
+    
+  
+  
+   
 
   def show
-    respond_with(@order)
+  
+  @order =Order.find(params[:id]);
+    ###respond_with(@order)
+  ###@plate_orders = order.select("id").where(:order_id => params[:id]);
+  
   end
 
   def new

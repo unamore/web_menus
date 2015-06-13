@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   
 
   get 'home/index'
@@ -13,20 +13,31 @@ Rails.application.routes.draw do
   get 'home/locales'
   get 'home/mapa'
   
+  get 'user'  =>'user#listado'
+  
+###get 'orders'  =>'orders#historico'
+get 'historico'  =>'orders#historico'
+###get 'historico'  =>'plate_orders#historico'
   
   resources :menu_orders
 
   resources :menus
+  resources :historico 
 
-  resources :plate_orders
+#do
+ #   resources :plate_orders
+#end     
+  ###resources :plate_orders
 
   resources :user_orders
 
-  resources :orders
+  resources :orders do 
+    resources :plate_orders
+  end
+resources :plate_orders do
+  resources :type_plates
 
-  resources :type_users
-
-
+end
  
 
   #resources :restaurants

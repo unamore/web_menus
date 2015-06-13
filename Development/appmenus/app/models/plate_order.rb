@@ -10,4 +10,9 @@
 #
 
 class PlateOrder < ActiveRecord::Base
+    
+    belongs_to :order    
+    ###attr_accessible :mensaje
+    ###attr_accessible :order
+    
 end

@@ -12,4 +12,8 @@
 #
 
 class Order < ActiveRecord::Base
+    
+    has_many :plate_orders
+    
+    
 end
